@@ -65,7 +65,26 @@ int main(int argc, char *argv[])
 
                     }
                         break;
-                case 7: break;
+                case 7:
+                   {
+                    char nombre;
+                    cout<<"INGRESE LETRA PARA VER SI SIGUIENTE: ";
+                    cin>>nombre;
+
+                    Vertice *sig = miGrafo.siguiente(new Vertice(nombre));
+
+                    if(sig!=NULL)
+                    {
+                       cout<<sig->nombre;
+                       //sig->imprimirMatriz();
+                    }
+                    else
+                    {
+                      cout<<"NO TIENE UN SIGUIENTE ";
+                    }
+
+                   }
+                 break;
 
                 default: cout<<"OPCION NO VALIDA...!!!";
                          break;

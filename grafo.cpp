@@ -14,7 +14,8 @@ void Grafo::menu()
         cout<<" 4. ELIMINAR UNA ARISTA              "<<endl;
         cout<<" 5. MOSTRAR  GRAFO                   "<<endl;
         cout<<" 6. MOSTRAR ARISTAS DE UN VERTICE       "<<endl;
-        cout<<" 7. SALIR                            "<<endl;
+        cout<<" 7. MOSTRAR SIGUIENTE       "<<endl;
+        cout<<" 8. SALIR                            "<<endl;
 
         cout<<"\n INGRESE OPCION: ";
 }
@@ -58,105 +59,17 @@ bool Grafo::agrega_arista(char ori, char dest)
 
 void Grafo::vaciar_aristas(Vertice *aux)
 {
- /*  Arista *q,*r;
-        q=aux->ady;
-        while(q->sgte!=NULL)
-        {
-            r=q;
-            q=q->sgte;
-            delete(r);
-        }*/
+
 }
 
 void Grafo::eliminar_vertice()
 {
-      /* char var;
-        Vertice *aux,*ant;
-        aux=p;
-        cout<<"ELIMINAR UN Vertice\n";
-        if(p==NULL)
-         {
-             cout<<"GRAFO VACIO...!!!!";
-             return;
-         }
-        cout<<"INGRESE NOMBRE DE VARIABLE:";
-        cin>>var;
 
-        while(aux!=NULL)
-        {
-            if(aux->nombre==var)
-            {
-                if(aux->ady!=NULL)
-                    vaciar_aristas(aux);
-
-                if(aux==p)
-                {
-
-                        p=p->sgte;
-                        delete(aux);
-                        cout<<"Vertice ELIMINADO...!!!!";
-                        return;
-                }
-                else
-                {
-                    ant->sgte = aux->sgte;
-                    delete(aux);
-                    cout<<"Vertice ELIMINADO...!!!!";
-                    return;
-                }
-            }
-            else
-            {
-                ant=aux;
-                aux=aux->sgte;
-             }
-        }*/
 }
 
 void Grafo::eliminar_arista()
 {
-      /*  char ini, fin;
-        Vertice *aux, *aux2;
-        Arista *q,*r;
-        cout<<"\n ELIMINAR ARISTA\n";
-        cout<<"INGRESE Vertice DE INICIO:";
-        cin>>ini;
-        cout<<"INGRESE Vertice FINAL:";
-        cin>>fin;
-        aux=p;
-        aux2=p;
-        while(aux2!=NULL)
-        {
-            if(aux2->nombre==fin)
-            {
-                break;
-            }
-            else
-            aux2=aux2->sgte;
-        }
-         while(aux!=NULL)
-        {
-            if(aux->nombre==ini)
-            {
-                q=aux->ady;
-                while(q!=NULL)
-                {
-                    if(q->destino==aux2)
-                    {
-                        if(q==aux->ady)
-                            aux->ady=aux->ady->sgte;
-                        else
-                            r->sgte=q->sgte;
-                        delete(q);
-                        cout<<"ARISTA  "<<aux->nombre<<"----->"<<aux2->nombre<<" ELIMINADA.....!!!!";
-                        return;
-                    }
-                }
-                r=q;
-                q=q->sgte;
-            }
-            aux = aux->sgte;
-         }*/
+
 }
 
 void Grafo::mostrar_grafo()
@@ -192,6 +105,23 @@ Vertice *Grafo::recuperar(Vertice *buscar)
         for(int i=0;i<cont;i++)
            if(vertices[i]->nombre == buscar->nombre)
                return vertices[i];
+    }
+    return NULL;
+}
+
+Vertice *Grafo::siguiente(Vertice *buscar)
+{
+    if(cont>0)
+    {
+        for(int i=0;i<cont;i++)
+           if(vertices[i]->nombre == buscar->nombre)
+           {
+                if(i+1<cont)
+                  return vertices[i+1];
+                else
+                    return NULL;
+           }
+
     }
     return NULL;
 }

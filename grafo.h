@@ -10,7 +10,6 @@ public:
     int cont;
     Vertice *vertices[10];
 
-    void Lee();
     void Warshall();
     void Floyd();
     void FloydVerInt();
@@ -23,8 +22,9 @@ public:
     void eliminar_arista();
     void mostrar_grafo();
     void mostrar_aristas(char var);
-    int getContador();
+    int getContador();    
     Vertice * recuperar(Vertice *buscar);
+    Vertice * siguiente(Vertice *buscar);
 
     Grafo();
 };
