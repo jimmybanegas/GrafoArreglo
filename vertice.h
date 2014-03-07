@@ -8,7 +8,7 @@ class Vertice
 public:
     int pos;
     char nombre;
-    char matriz[10][10];
+    char matriz[10];
 
     void imprimirMatriz();
 

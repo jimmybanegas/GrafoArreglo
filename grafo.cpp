@@ -3,6 +3,11 @@
 Grafo::Grafo()
 {
     this->cont = 0;
+
+    for(int fila=0; fila<10; fila++)
+      for(int columna=0; columna<10; columna++)
+           matriz[fila][columna] = '-'  ;
+
 }
 
 void Grafo::menu()
@@ -14,8 +19,9 @@ void Grafo::menu()
         cout<<" 4. ELIMINAR UNA ARISTA              "<<endl;
         cout<<" 5. MOSTRAR  GRAFO                   "<<endl;
         cout<<" 6. MOSTRAR ARISTAS DE UN VERTICE       "<<endl;
-        cout<<" 7. MOSTRAR SIGUIENTE       "<<endl;
-        cout<<" 8. SALIR                            "<<endl;
+        cout<<" 7. MOSTRAR SIGUIENTE       "            <<endl;
+        cout<<" 8. MOSTRAR MATRIZ DE ADYACENCIA       " <<endl;
+        cout<<" 9. SALIR                            "<<endl;
 
         cout<<"\n INGRESE OPCION: ";
 }
@@ -50,7 +56,8 @@ bool Grafo::agrega_arista(char ori, char dest)
 
     if( origen!=NULL && destino!=NULL)
      {
-        origen->matriz[origen->pos][destino->pos] = destino->nombre;
+        origen->matriz[destino->pos] = destino->nombre;
+        this->matriz[origen->pos][destino->pos] = destino->nombre;
         return true;
      }
      return false;
@@ -124,5 +131,17 @@ Vertice *Grafo::siguiente(Vertice *buscar)
 
     }
     return NULL;
+}
+
+void Grafo::imprimirMatriz()
+{
+    for(int fila=0; fila<10; fila++)
+    {
+        cout<<""<<endl;
+        for(int columna=0; columna<10; columna++)
+        {
+           cout<<matriz[fila][columna];
+        }
+    }
 }
 

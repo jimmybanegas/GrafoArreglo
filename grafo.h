@@ -10,6 +10,8 @@ public:
     int cont;
     Vertice *vertices[10];
 
+    char matriz[10][10];
+
     void Warshall();
     void Floyd();
     void FloydVerInt();
@@ -25,6 +27,7 @@ public:
     int getContador();    
     Vertice * recuperar(Vertice *buscar);
     Vertice * siguiente(Vertice *buscar);
+    void imprimirMatriz();
 
     Grafo();
 };

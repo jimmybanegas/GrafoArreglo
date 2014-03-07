@@ -84,8 +84,12 @@ int main(int argc, char *argv[])
                     }
 
                    }
-                 break;
-
+                break;
+                case 8:
+                    {
+                      miGrafo.imprimirMatriz();
+                    }
+                        break;
                 default: cout<<"OPCION NO VALIDA...!!!";
                          break;
 
